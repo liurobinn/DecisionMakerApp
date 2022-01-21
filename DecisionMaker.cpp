@@ -2,21 +2,21 @@
 
 using namespace std;
 
-struct Decision {
+struct Decision { //overall structure for the app, so the function can be called in the int main()
 
-        string answer1;
-        string answer2;
-        string answer3;
-        string answer4;
-        string answer5;
-        bool Switch;
-        bool software;
-        bool hardware;
-        bool stability;
-        bool trajectory;
-        bool output;
+        string answer1; //The answer for the "switch" question
+        string answer2; //The answer for question 1
+        string answer3; //The answer for question 2
+        string answer4; //The answer for question 3
+        string answer5; //The answer for question 4
+        bool Switch; // the main "switch"
+        bool software; // output 1
+        bool hardware; // output 2
+        bool stability; // output 3
+        bool trajectory; // output 4
+        bool output; // final output
 
-        void init(){
+        void init(){ //initialize the app
                 cout << "Welcome to my decision maker app!\n";
                 cout << "Wanna know if you are able to launch a rocket today?"; cout << "1: YES; 2: NO";
                 getline(cin,answer1);
@@ -36,7 +36,7 @@ struct Decision {
 
         }
 
-        void responseCollection(){
+        void responseCollection(){ //collect the response from the users
                 if (Switch==false) {
                         return;
                 }
@@ -79,64 +79,64 @@ struct Decision {
                         cin>>answer5;
                 }
         }
-        void result(){
+        void result(){ //output result
                 if (Switch==false) {
                         return;
                 }
                 cout << "======================================================================= \n";
                 cout << "Here is the result: \n";
-                if (answer2 == "1"||answer2 == "2") {
+                if (answer2 == "1"||answer2 == "2") {//evaluate results
                         cout << "Not confident with the software\n";
                         software=false;
                 }
-                else if(answer2 == "3"||answer2 == "4") {
+                else if(answer2 == "3"||answer2 == "4") {//evaluate results
                         cout << "Kinda confident with the software\n";
                         software=false;
                 }
-                else if (answer2 == "5"||answer2 == "6"||answer2 == "7"||answer2 == "8") {
+                else if (answer2 == "5"||answer2 == "6"||answer2 == "7"||answer2 == "8") {//evaluate results
                         cout << "Confident with the software\n";
                         software=true;
                 }
-                else{
+                else{//evaluate results
                         cout << "Very confident with the software\n";
                         software=true;
                 }
 
-                if (answer3 == "1") {
+                if (answer3 == "1") {//evaluate results
                         cout << "Hardware is ready to go\n";
                         hardware=true;
                 }
-                else{
+                else{//evaluate results
                         cout << "Hardware is not ready\n";
                         hardware=false;
                 }
 
-                if (answer4 == "1") {
+                if (answer4 == "1") {//evaluate results
                         cout << "Rocket is stable during flight\n";
                         stability=true;
                 }
-                else{
+                else{//evaluate results
                         cout << "Rocket is not stable during flight\n";
                         stability=false;
                 }
 
-                if (answer5 == "1") {
+                if (answer5 == "1") {//evaluate results
                         cout << "Rocket has a good trajectory\n";
                         trajectory=true;
                 }
-                else{
+                else{//evaluate results
                         cout << "Rocket does not have a good trajectory\n";
                         trajectory=false;
                 }
 
-                output=software && hardware && stability && trajectory;
+                output=software && hardware && stability && trajectory; //equation for calculating results
 
-                if (output == true) {
+                if (output == true) {//output results
                         cout << "==================================\n";
                         cout << "==== Rocket is go for launch! ====\n";
                         cout << "==================================\n";
                 }
-                else{
+                else{//output results
                         cout << "=============================================================================\n";
                         cout << "==== Rocket is not go for launch... fix the problem and try another day! ====\n";
                         cout << "=============================================================================\n";
@@ -144,12 +144,12 @@ struct Decision {
         }
 };
 
-struct Decision decisionMaker;
+struct Decision decisionMaker;//give the structure a name
 
 int main()
 {
-        decisionMaker.init();
-        decisionMaker.responseCollection();
-        decisionMaker.result();
+        decisionMaker.init(); //call the function in the main program function
+        decisionMaker.responseCollection();//call the function in the main program function
+        decisionMaker.result();//call the function in the main program function
         return 0;
 }
