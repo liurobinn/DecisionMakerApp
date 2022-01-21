@@ -1,7 +1,8 @@
 # About
-This App Determines if you are ready to launch a rocket or not. Please follow the instruction and have fun with the quiz!
+This app determines if you are ready to launch a rocket or not. Please follow the instruction and have fun with the quiz!
 
 # Includes:
 1. Four questions
-2. Output response
-3. Summary of the quiz
+2. Fault tolerance 
+3. Output response
+4. Summary of the quiz
